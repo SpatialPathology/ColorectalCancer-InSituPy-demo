@@ -31,6 +31,8 @@ To run the demo notebooks, InSituPy has to be installed. For information on how 
 
 The data can be downloaded from [GEO]() and needs to be placed in the `data/` directory.
 
+> 📦 **Note:** The Xenium output files on GEO are provided as `.tar.gz` archives. These must be extracted before use.
+
 ## 📊 Getting Started
 
 1. Clone the repository:
