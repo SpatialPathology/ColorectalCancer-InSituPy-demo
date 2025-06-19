@@ -13,6 +13,8 @@ This repository contains Jupyter notebooks for the analysis of a colorectal canc
 │   ├── 03_spatial_analysis.ipynb
 │   └── 04_visualization.ipynb
 ├── data/ (not included)
+├── .gitignore
+├── LICENSE
 ├── README.md
 └── sample_configuration.csv
 ```
