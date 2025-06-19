@@ -29,7 +29,7 @@ This repository contains Jupyter notebooks for the analysis of a colorectal canc
 
 To run the demo notebooks, InSituPy has to be installed. For information on how to install it, see [here](https://github.com/SpatialPathology/InSituPy?tab=readme-ov-file#installation).
 
-The data can be downloaded [here]() and needs to be placed in the `data/` directory.
+The data can be downloaded from [GEO]() and needs to be placed in the `data/` directory.
 
 ## 📊 Getting Started
 
