@@ -14,7 +14,7 @@ This repository contains Jupyter notebooks for the analysis of a colorectal canc
 │   └── 04_visualization.ipynb
 ├── data/ (not included)
 ├── README.md
-└── requirements.txt
+└── sample_configuration.csv
 ```
 
 ## 🚀 Features
