@@ -19,21 +19,13 @@ This repository contains Jupyter notebooks for the analysis of a colorectal canc
 └── sample_configuration.csv
 ```
 
-## 🚀 Features
-
-- Loading and exploring Xenium In Situ spatial transcriptomics data
-- Preprocessing and quality control
-- Spatial clustering and cell-type annotation
-- Visualization of spatial gene expression patterns
-- Demonstration of InSituPy's core functionalities
-
 ## 🛠️ Requirements
 
 To run the demo notebooks, InSituPy has to be installed. For information on how to install it, see [here](https://github.com/SpatialPathology/InSituPy?tab=readme-ov-file#installation).
 
 The data can be downloaded from [GEO]() and needs to be placed in the `data/` directory.
 
-> ⚠️ **Note:** The Xenium output files on GEO are provided as `.tar.gz` archives. These must be extracted before use.
+> ⚠️ **Note:** The Xenium and Proseg output files on GEO are provided as `.tar.gz` archives. These must be extracted before use.
 
 ## 📊 Getting Started
 
