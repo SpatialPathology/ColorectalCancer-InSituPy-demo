@@ -1,13 +1,14 @@
 #!/usr/bin/env python3
-import scanpy as sc
-import celltypist
 import time
 from pathlib import Path
+
+import celltypist
+import scanpy as sc
 
 n_cells = 5000
 norm = "1e2"
 
-celltypist_path = Path("/dss/dssfs02/lwp-dss-0001/pn57fo/pn57fo-dss-0000/projects/2301-CRC/celltypist/")
+celltypist_path = Path("/path/to/celltypist_folder/")
 out_path = celltypist_path / "results"
 out_path.mkdir(exist_ok=True) # create output directory
 
@@ -18,19 +19,19 @@ ref_path = celltypist_path / f"reference_{n_cells}_pp{norm}.h5ad"
 adata = sc.read(ad_path)
 reference = sc.read(ref_path)
 
-# # perform subsampling
-# print("Subsampling...")
-# sc.pp.sample(adata, n=1000)
+# perform subsampling
+print("Subsampling...")
+sc.pp.sample(adata, n=1000)
 
-# # Add `check_expression = False` to bypass expression check with only a subset of genes.
-# t_start = time.time()
-# model = celltypist.train(reference, 'cell_type_middle', check_expression = False, n_jobs = -1, max_iter = None)
-# t_end = time.time()
-# print(f"Time elapsed: {(t_end - t_start)/60} minutes", flush=True)
+# Add `check_expression = False` to bypass expression check with only a subset of genes.
+t_start = time.time()
+model = celltypist.train(reference, 'cell_type_middle', check_expression = False, n_jobs = -1, max_iter = None)
+t_end = time.time()
+print(f"Time elapsed: {(t_end - t_start)/60} minutes", flush=True)
 
 # # Save the model.
 model_path = celltypist_path / f'crc_atlas_model_max{n_cells}{norm}.pkl'
-# model.write(model_path)
+model.write(model_path)
 
 # CellTypist prediction without over-clustering and majority-voting.
 t_start = time.time()

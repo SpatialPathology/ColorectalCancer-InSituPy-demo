@@ -25,8 +25,8 @@ out_name = f"{gene_likelihood}_{dispersion}_{max_epochs_scvi}_{max_epochs_scanvi
 subsample = False
 num_workers = 5
 
-data_path = Path(f"/dss/dssfs02/lwp-dss-0001/pn57fo/pn57fo-dss-0000/projects/2301-CRC/celltypist/results/{adata_name}.h5ad")
-output_path = Path(f"/dss/dssfs02/lwp-dss-0001/pn57fo/pn57fo-dss-0000/projects/2301-CRC/scANVI_batch_correction/results_gpu__{adata_name}__{scanvi_labels_key}__{out_name}")
+data_path = Path(f"/path/to/celltypist_folder/results/{adata_name}.h5ad")
+output_path = Path(f"/path/to/scANVI_folder/results_gpu__{adata_name}__{scanvi_labels_key}__{out_name}")
 output_path.mkdir(exist_ok=True) # create output directory
 
 # setup model paths
@@ -71,14 +71,14 @@ sc.pp.neighbors(adata)
 #sc.tl.leiden(adata, key_added="leiden")
 sc.tl.umap(adata, min_dist=0.3)
 
-# print("Plot UMAP before scVI.", flush=True)
-# sc.pl.embedding(
-#     adata,
-#     basis="X_umap",
-#     color=["uid", "majority_voting", "predicted_labels"],
-#     ncols=1,
-#     save=f"_{out_name}.png"
-# )
+print("Plot UMAP before scVI.", flush=True)
+sc.pl.embedding(
+    adata,
+    basis="X_umap",
+    color=["uid", "majority_voting", "predicted_labels"],
+    ncols=1,
+    save=f"_{out_name}.png"
+)
 
 print("Train scVI model.", flush=True)
 scvi.model.SCVI.setup_anndata(adata, layer="counts", batch_key=scvi_batch_key)
@@ -105,14 +105,14 @@ sc.pp.neighbors(adata, use_rep=SCVI_LATENT_KEY, key_added=scvi_neighbor_key)
 #sc.tl.leiden(adata, neighbors_key=scvi_neighbor_key, key_added="leiden_scvi")
 sc.tl.umap(adata, neighbors_key=scvi_neighbor_key, key_added="X_umap_scvi", min_dist=0.3)
 
-# print("Plot UMAP of scVI results.")
-# sc.pl.embedding(
-#     adata,
-#     basis="X_umap_scvi",
-#     color=["uid", "majority_voting", "predicted_labels"],
-#     ncols=1,
-#     save=f"_{out_name}.png"
-# )
+print("Plot UMAP of scVI results.")
+sc.pl.embedding(
+    adata,
+    basis="X_umap_scvi",
+    color=["uid", "majority_voting", "predicted_labels"],
+    ncols=1,
+    save=f"_{out_name}.png"
+)
 
 print("Save scVI results.", flush=True)
 adata.write(scvi_adata_out_path)
@@ -154,13 +154,13 @@ sc.tl.umap(adata, neighbors_key=scanvi_neighbors_key, key_added="X_umap_scanvi",
 print("Save scANVI results.", flush=True)
 adata.write(adata_out_path)
 
-# print("Plot UMAP of scANVI results.", flush=True)
-# sc.pl.embedding(
-#     adata,
-#     basis="X_umap_scanvi",
-#     color=["uid", "majority_voting", "predicted_labels"],
-#     ncols=1,
-#     save=f"_{out_name}.png"
-# )
+print("Plot UMAP of scANVI results.", flush=True)
+sc.pl.embedding(
+    adata,
+    basis="X_umap_scanvi",
+    color=["uid", "majority_voting", "predicted_labels"],
+    ncols=1,
+    save=f"_{out_name}.png"
+)
 
 print("Finished.")

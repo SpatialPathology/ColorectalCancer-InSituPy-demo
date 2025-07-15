@@ -5,7 +5,7 @@ import pandas as pd
 import scanpy as sc
 
 print("Load data...", flush=True)
-data_path = Path("/dss/dssfs02/lwp-dss-0001/pn57fo/pn57fo-dss-0000/projects/2301-CRC/celltypist/results_5000_1e2.h5ad")
+data_path = Path("/path/to/celltypist_folder/results_5000_1e2.h5ad")
 adata = sc.read(data_path)
 
 print("Perform PCA...", flush=True)
