@@ -1,8 +1,0 @@
-﻿directory,sample_id,Region,Patient,Age,Tissue,Type,Sample Name,Metastasis type,HE,panCK
-../data/output-XETG00050__0003621__Region_1__20230504__121954,0,1,1,49,Colon,primary tumor,Colorectal Cancer,,../data/0003621__Region_1__HE__unregistered.tif,../data/0003621__Region_1__panCK__unregistered.tif
-../data/output-XETG00050__0003621__Region_2__20230504__121954,1,2,1,49,Lymph node,metastasis,Lymph node metastasis,synchronous,../data/0003621__Region_2__HE__unregistered.tif,../data/0003621__Region_2__panCK__unregistered.tif
-../data/output-XETG00050__0003621__Region_3__20230504__121954,2,3,1,49,Lung,metastasis,Lung metastasis,asynchronous,../data/0003621__Region_3__HE__unregistered.tif,../data/0003621__Region_3__panCK__unregistered.tif
-../data/output-XETG00050__0003621__Region_4__20230504__121954,3,4,1,49,Liver,metastasis,Liver metastasis,synchronous,../data/0003621__Region_4__HE__unregistered.tif,../data/0003621__Region_4__panCK__unregistered.tif
-../data/output-XETG00050__0003991__Region_1__20230504__121954,4,1,2,63,Colon,primary tumor,Colorectal Cancer,,../data/0003991__Region_1__HE__unregistered.tif,../data/0003991__Region_1__panCK__unregistered.tif
-../data/output-XETG00050__0003991__Region_2__20230504__121954,5,2,2,63,Lymph node,metastasis,Lymph node metastasis,synchronous,../data/0003991__Region_2__HE__unregistered.tif,../data/0003991__Region_2__panCK__unregistered.tif
-../data/output-XETG00050__0003991__Region_3__20230504__121954,6,3,2,63,Lung,metastasis,Lung metastasis,asynchronous,../data/0003991__Region_3__HE__unregistered.tif,../data/0003991__Region_3__panCK__unregistered.tif
