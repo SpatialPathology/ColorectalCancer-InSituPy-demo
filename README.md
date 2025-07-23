@@ -1,4 +1,4 @@
-# 🧬 Analysis Colorectal Cancer In Situ Sequencing Dataset with InSituPy
+# 🧬 Analysis of Colorectal Cancer In Situ Sequencing Dataset with InSituPy
 
 > ⚠️ **Note:** This repository is currently under active development. Some features or notebooks may not be fully functional yet. Contributions and feedback are welcome!
 
